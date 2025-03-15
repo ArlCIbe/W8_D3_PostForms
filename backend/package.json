@@ -1,15 +1,28 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "Make calls from the frontend to the backend by creating POST calls to the POST routes on the pokemon backend.",
+  "type": "module",
+  "description": "A simple backend for the Pokedex app using Node.js and Express.js. It provides an API to fetch Pokemon data from the PokeAPI and serves it to the frontend.",
   "main": "index.cjs",
   "scripts": {
     "test": "echo \\\"Error: no test specified\\\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ArlCIbe/W8_D3_PostForms"
+  },
+  "keywords": [
+    "post",
+    "routes",
+    "backend",
+    "pokedex",
+    "pokemon"
+  ],
   "author": "ibLindo",
   "license": "ISC",
   "dependencies": {
     "axios": "^1.8.3",
-    "cors": "^2.8.5"
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
   }
 }

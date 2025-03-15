@@ -1,0 +1,15 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Make calls from the frontend to the backend by creating POST calls to the POST routes on the pokemon backend.",
+  "main": "index.cjs",
+  "scripts": {
+    "test": "echo \\\"Error: no test specified\\\" && exit 1"
+  },
+  "author": "ibLindo",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.8.3",
+    "cors": "^2.8.5"
+  }
+}

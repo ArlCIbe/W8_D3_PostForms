@@ -1,0 +1,133 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+
+* {
+    /* box-sizing: border-box; */  /* <---- what's this for?*/
+
+}
+
+#pokemonCardSection {
+    margin-top: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+}
+
+#refresh {
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+#refresh button {
+    margin: 0;
+}
+
+#mainContent {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+
+}
+
+.pokemonCard {
+    border: 3px solid black;
+    display: inline-flex;
+    flex-direction: column;
+    padding: 3%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 9px;
+    margin: 1%;
+    max-width: 20vw;
+    height: 20vh;
+    position: relative;
+
+}
+
+
+.pokemonCard img {
+    width: 80%;
+    height: 80%;
+
+}
+
+.pokemonCard .footer{
+    position: absolute;
+    /* right: 0; */
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 3px solid black;
+    width: 100%;
+}
+
+.pokemonCard .pokemonType {
+    border-bottom: 35px solid white;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    height: 0;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+}
+
+.pokemonName {
+    /* margin: 0; */
+    font-size: 1.8rem;
+
+    /* border: 3px solid black; */
+}
+
+.pokemonType h3 {
+    margin-top: 4%;
+}
+
+
+
+#header {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #EC1A23;
+    border: 3px solid black
+}
+
+#refresh {
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+}
+
+#refresh button {
+    margin: 0 auto;
+
+}
+
+#refresh h3 {
+
+    margin: 0;
+    margin-top: 1%;
+}
+
+#header h1 {
+    display: inline-block;
+    font-size: 3em;
+    /* border: 3px solid black; */
+}
+
+
+#content {
+    display: flex;
+}

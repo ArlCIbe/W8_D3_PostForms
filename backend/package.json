@@ -5,6 +5,7 @@
   "description": "A simple backend for the Pokedex app using Node.js and Express.js. It provides an API to fetch Pokemon data from the PokeAPI and serves it to the frontend.",
   "main": "index.cjs",
   "scripts": {
+    "start": "node --watch index.cjs",
     "test": "echo \\\"Error: no test specified\\\" && exit 1"
   },
   "repository": {

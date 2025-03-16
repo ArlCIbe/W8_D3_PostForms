@@ -23,19 +23,19 @@ async function fetchPokemonInfo(_id = null) {
   try {
     const baseURL = 'https://pokeapi-ptvv.onrender.com';
 
-    if (_id) {
-      const response = await axios.get(`${baseURL}/pokemon`); //returns promise that'll resolve to all pokemon
-      console.log('Response data:', response.data);
+    if (_id === 'team') {
+      const response  = await axios.get(`${baseURL}/pokemon/team`); //returns promise that'll resolve to a team of random pokemon
+      console.log('Pokemon team was fetched successfully:', response.data);
       return response.data;
     }
-    else if(_id === 'team') {
-      const response  = await axios.get(`${baseURL}/pokemon/team`); //returns promise that'll resolve to a team of random pokemon
-      console.log('Response data:', response.data);
+    else if(_id) {
+      const response = await axios.get(`${baseURL}/pokemon`); //returns promise that'll resolve to all pokemon
+      console.log('Pokemon were fetched successfully:', response.data);
       return response.data;
     }
     else {
       const response = await axios.get(`${baseURL}/pokemon`); //returns promise that'll resolve to all pokemon
-      console.log('Response data:', response.data);
+      console.log('Pokemon was fetched successfully:', response.data);
       return response.data;
     }
   } 
@@ -65,8 +65,6 @@ console.log(`Server is running on http://localhost:${port}`)
 
 server.on('error', (error) => {
 console.error('There was an error starting the server:', error);
-
-return;
 });
 
 fetchPokemonInfo()

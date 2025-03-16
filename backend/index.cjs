@@ -17,29 +17,32 @@ app.use(cors(corsOptions)); //enables CORS in express apps
 
 const port = 3001; //specifies the network port the server will be listening to for incoming HTTP requests
 
-async function fetchPokemonInfo() {
-try {
-  const pokeURLS = [ //Pokemon API URL array will allow me to fetch the URLs all at once
-    'https://pokeapi-ptvv.onrender.com/pokemon',
-    'https://pokeapi-ptvv.onrender.com/pokemon/team',
-    'https://pokeapi-ptvv.onrender.com/pokemon/:id'
-  ];
+//fetches data from API and returns it to client
+async function fetchPokemonInfo(_id = null) {
 
-  const pokeRequests = pokeURLS.map(pokeURL => axios.get(pokeURL)); //creates a new array containing the promises fetched from the URLs in pokeURLS[]
+  try {
+    const baseURL = 'https://pokeapi-ptvv.onrender.com';
 
-  const pokeResponses = await Promise.all(pokeRequests); //creates a promise that returns an array of results only when ALL its promises resolve
-
-  const data = pokeResponses.map(response => response.data); //creates a new array containing the actual data received from the URLs
-
-  console.log(data);
-
-  return data;
-} 
-catch (error) {
-  console.error('Error fetching data:', error);
-
-  throw error; //rethrows the error so it can be adressed at higher levels of code, if needed
-}
+    if (_id) {
+      const response = await axios.get(`${baseURL}/pokemon`); //returns promise that'll resolve to all pokemon
+      console.log('Response data:', response.data);
+      return response.data;
+    }
+    else if(_id === 'team') {
+      const response  = await axios.get(`${baseURL}/pokemon/team`); //returns promise that'll resolve to a team of random pokemon
+      console.log('Response data:', response.data);
+      return response.data;
+    }
+    else {
+      const response = await axios.get(`${baseURL}/pokemon`); //returns promise that'll resolve to all pokemon
+      console.log('Response data:', response.data);
+      return response.data;
+    }
+  } 
+  catch (error) {
+    console.error('Error fetching data:', error);
+    throw error; //rethrows the error so it can be adressed at higher levels of code, if needed
+  }
 }
 
 let pokemonData = null; //will store the fetched data
